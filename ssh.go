@@ -29,11 +29,6 @@ func ssh_exec(conn *ssh.Client, li *lvs_info) error {
 		fmt.Println("run " + err.Error())
 		return err
 	} else { //如果成功修改lvs_info状态
-		// if li.after {
-		// 	li.after = false
-		// } else {
-		// 	li.after = true
-		// }
 		li.after = !li.after
 		return nil
 	}
