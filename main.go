@@ -108,7 +108,7 @@ func init() {
 
 func check_slave(dest string) error {
 	//生成服务器连接
-	engine, err := xorm.NewEngine("mysql", fmt.Sprintf("root:123456@tcp(%s:3306)/?charset=utf8", dest))
+	engine, err := xorm.NewEngine("mysql", fmt.Sprintf("root:mysqlpasswd@tcp(%s:3306)/?charset=utf8", dest))
 	if err != nil {
 		return err
 	}
