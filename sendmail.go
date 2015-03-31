@@ -36,7 +36,7 @@ func newmailini(g *goconfig.ConfigFile) *mailini {
 
 func sendmail(m *mailini, content string) error {
 	//格式化邮件内容
-	sub := fmt.Sprintf(fmt.Sprintf("To: %s\r\nFrom: %s<%s>\r\nSubject: %s\r\nContent-Type: text/html; Charset=UTF-8\r\n\r\n%s", m.maillist, "易骆驼运维", m.user, "E骆驼集群报警", content))
+	sub := fmt.Sprintf(fmt.Sprintf("To: %s\r\nFrom: %s<%s>\r\nSubject: %s\r\nContent-Type: text/html; Charset=UTF-8\r\n\r\n%s", m.maillist, "邮箱别名", m.user, "标题", content))
 	mailList := strings.Split(m.maillist, ",")
 	auth := smtp.PlainAuth("", m.user, m.passwd, m.smtpaddress)
 	au := fmt.Sprintf("%s:%d", m.smtpaddress, m.smtpport)
